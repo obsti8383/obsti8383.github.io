@@ -4,7 +4,7 @@ layout: home
 
 
 
-## Content
+### Content
 
 * [About]({% link about.markdown %})
 * [Birthday Reminder Tool]({% link birthdayreminder.md %})
