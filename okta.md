@@ -4,7 +4,7 @@ title: "Okta Code Snippets"
 permalink: /okta/
 ---
 
-Code for managing [Okta](https://www.okta.com) IAM environments.
+Code for managing [Okta](https://www.okta.com){:target="_blank"} IAM environments.
 
 ## Powershell Scripts
 
