@@ -17,4 +17,4 @@ Note: _currently a little bit outdated with regards to software versions - needs
 
 ## Useful Links
 
-* Want to learn about golang: [golang.org page](https://golang.org/).
+* Want to learn about golang: [golang.org page](https://golang.org/){:target="_blank"}.
