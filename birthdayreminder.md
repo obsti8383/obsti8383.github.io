@@ -13,4 +13,4 @@ Best to be used with [vdirsyncer](https://github.com/pimutils/vdirsyncer) to dow
 
 
 
-_Written in [golang](https://golang.org/)._
+_Written in [golang](https://golang.org/){:target="_blank"}._
