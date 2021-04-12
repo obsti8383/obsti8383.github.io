@@ -5,11 +5,13 @@ date:   2021-04-10 08:41:10 +0200
 categories: update
 ---
 
-If you don't want to use docker containers, which is pretty much the standard with Traefik, you can also do a manual install on a Debian Linux system.
+If you don't want to use docker containers (using docker is pretty much the standard with Traefik), you can also do a manual install on a Debian Linux system.
 
-Credits: adapted from: <https://gist.github.com/ubergesundheit/7c9d875befc2d7bfd0bf43d8b3862d85>
+Credits: taken from the following gist with minor adaptions: <https://gist.github.com/ubergesundheit/7c9d875befc2d7bfd0bf43d8b3862d85>
 
-First, put the traefik binary in the system wide binary directory and give it appropriate ownership and permissions:
+Download the corresponding binary (e.g. linux-amd64) from <https://github.com/traefik/traefik/releases>.
+
+Put the traefik binary in the system wide binary directory and give it appropriate ownership and permissions:
 
     sudo cp traefik/traefik /usr/local/bin
     sudo chown root:root /usr/local/bin/traefik
@@ -19,7 +21,7 @@ Give the traefik binary the ability to bind to privileged ports (e.g. 80, 443) a
 
     sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/traefik
 
-Set up the user, group, and directories that will be needed:
+Set up the user, group, and directories that will be needed (verify that group id / user id do not exist yet or let groupadd/useradd choose the id by leaving it out from command):
 
 	sudo groupadd -g 321 traefik
     sudo useradd -g traefik --no-user-group --home-dir /var/www --no-create-home --shell /usr/sbin/nologin --system --uid 321 traefik
@@ -42,7 +44,7 @@ Place your traefik configuration file (`traefik.toml`, example below) in the pro
 	cp /root/traefik/config/* /etc/traefik/config/
 	sudo chown -R traefik:traefik /etc/traefik/acme
 
-Adjust the config directory and logfile in traefik.toml:
+Adjust the config directory and logfile location in traefik.toml:
 
 	[global]
 	  checkNewVersion = true
